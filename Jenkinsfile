@@ -15,5 +15,10 @@ pipeline {
         }
       }
     }
+    stage('preproduction') {
+      steps {
+        echo 'this is pre prod'
+      }
+    }
   }
 }
