@@ -16,8 +16,23 @@ pipeline {
       }
     }
     stage('preproduction') {
-      steps {
-        echo 'this is pre prod'
+      parallel {
+        stage('preproduction') {
+          steps {
+            echo 'this is pre prod'
+          }
+        }
+        stage('preprod 2') {
+          steps {
+            timestamps() {
+              timestamps() {
+                echo 'Time taken for execution'
+              }
+
+            }
+
+          }
+        }
       }
     }
   }
